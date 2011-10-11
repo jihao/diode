@@ -11,7 +11,11 @@ Diode::Application.routes.draw do
 
   get "home/index"
   root :to => 'home#index'
-
+  # 个人主页
+  match 'home/:user_id' => 'home#show', :as => :show
+  #　查看该用户发布的所有笑话
+  match 'home/:user_id/jokes' => 'home#show_user_jokes', :as => :show_user_jokes
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

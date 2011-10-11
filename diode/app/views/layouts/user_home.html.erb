@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diode</title>
+  <%= stylesheet_link_tag    "application","bootstrap" %>
+  <%= javascript_include_tag "application" %>
+  <style type="text/css">
+    body {
+		padding-top: 60px;
+    }
+    .content {
+		min-width:940px;
+    }
+    p.pull-right {
+		color:#BFBFBF;
+    }
+    img.header_msg{
+		vertical-align:middle;
+    }
+  </style>
+
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render :partial => "layouts/topbar" %>
+
+<div class="container-fluid">
+     <div class="sidebar">
+       <div class="well">
+         <div style="text-align:center;"><!--个人信息-->
+			<dl>
+				<dt><a href="" title="haojii"><img src="http://placehold.it/128x128"></a></dt>
+				<dd>
+				<a href="#">昵称</a>
+				<p>签名档</p>
+				</dd>
+			</dl>
+			<ul class="unstyled">	
+				<li><span>微博:</span><strong>287</strong></li>
+				<li><a href="#"><span>关注:</span><strong>163</strong></a></li>
+				<li><a href="#"><span>粉丝:</span><strong>155</strong></a></li>
+			</ul>
+		<!--/个人信息--></div>
+		<div style="text-align:center;"><!--follow-->
+			<button class="btn success disabled">已关注</button>
+			|
+			<button class="btn success">关注</button>
+			|
+			<button class="btn danger">取消关注</button>
+		<!--/follow--></div>
+		
+       </div>
+     </div>
+     <div class="content">
+       <%= yield%>
+       <%= render :partial => "layouts/footer" %>
+     </div>
+   </div>
+</body>
+</html>

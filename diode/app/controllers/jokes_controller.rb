@@ -1,5 +1,6 @@
 class JokesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  layout "user_home",:except=>[:rss,:atom,:json]
   
   # GET /jokes
   # GET /jokes.json
