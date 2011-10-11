@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diode</title>
+  <%= stylesheet_link_tag    "application","bootstrap" %>
+  <%= javascript_include_tag "application" %>
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+    }
+    p.pull-right {
+    color:#BFBFBF;
+    }
+    img.header_msg{
+        vertical-align:middle;
+    }
+    /* Styles you shouldn't keep as they are for displaying this base example only */
+    .content .span10, .content .span4 {
+        min-height: 400px;
+      }
+    /* Give a quick and non-cross-browser friendly divider */
+    .content .span4 {
+       margin-left: 0;
+       padding-left: 19px;
+       border-right: 1px solid #eee;
+     }
+  </style>
+
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render :partial => "layouts/topbar" %>
+	
+<div class="container">
+
+      <div class="content">
+        <div class="page-header">
+          <h1>段子网<small>千金难买一笑 ; )</small></h1>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <h3>高质量段子分享社区</h3>
+            </div>
+            <div class="span10">
+                <h2></h2>
+                <%= yield %>
+            </div>
+        </div>
+      </div>
+
+      <%= render :partial => "layouts/footer" %>
+
+    </div>
+</body>
+</html>

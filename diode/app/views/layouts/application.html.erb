@@ -8,6 +8,9 @@
     body {
       padding-top: 60px;
     }
+    .content {
+		min-width:940px;
+    }
     p.pull-right {
     color:#BFBFBF;
     }
@@ -24,37 +27,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <div class="topbar">
-      <div class="topbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="#">Diode</a>
-          <ul class="nav">
-            <li class="active"><a href="#">首页</a></li>
-            <li><a href="#about">最新</a></li>
-            <li><a href="#contact">24小时最热</a></li>
-            <li><a href="#contact">本周最热</a></li>
-            <li><a href="#contact">本月最热</a></li>
-            <li><a href="#contact">本年最热</a></li>
-          </ul>
-          <p class="pull-right">
-            <% if user_signed_in? -%> <!-- Provided by devise -->
-                <%= link_to image_tag("msg.png",:size=>"24x24",:class=>"header_msg"), '/auth/tsina', :title=> "连接新浪" %>
-                <%= current_user.email %> |
-                <%= link_to '用户信息', edit_user_registration_path %> |
-                <%= link_to '退出登陆', destroy_user_session_path, :method => :delete %> | 
-                <%= link_to '讲一个', 'new_joke_path' %> 
-                <!-- 
-                <%= link_to image_tag("msg.png"), '/auth/tsina', :title=> "连接新浪" %>
-                -->
-            <% end %>
-            <% unless user_signed_in? -%>
-                <%= link_to '注册', new_user_registration_path %> |
-                <%= link_to '登录', new_user_session_path %>
-            <% end %>
-            </p>
-        </div>
-      </div>
-    </div>
+   
+<%= render :partial => "layouts/topbar" %>
 
 <div class="container-fluid">
      <div class="sidebar">
@@ -84,6 +58,7 @@
          
        </div>
      </div>
+
      <div class="content">
        <!-- Main hero unit for a primary marketing message or call to action -->
        <div class="hero-unit">
@@ -155,10 +130,11 @@
          </div>
        </div>
 
-       <footer>
-         <p>&copy; Company 2011</p>
-       </footer>
      </div>
+		<%= render :partial => "layouts/footer" %>
    </div>
+
+
+
 </body>
 </html>

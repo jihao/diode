@@ -18,19 +18,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <div class="topbar">
-      <div class="topbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="#">Diode</a>
-          <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <p class="pull-right">Logged in as <a href="#">username</a></p>
-        </div>
-      </div>
-    </div>
+<%= render :partial => "layouts/topbar" %>
 
 <%= yield %>
 <div class="container-fluid">
@@ -108,9 +96,7 @@
          </div>
        </div>
 
-       <footer>
-         <p>&copy; Company 2011</p>
-       </footer>
+       <%= render :partial => "layouts/footer" %>
      </div>
    </div>
 </body>

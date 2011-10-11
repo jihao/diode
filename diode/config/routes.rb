@@ -1,4 +1,12 @@
 Diode::Application.routes.draw do
+  get "settings/index"
+
+  get "settings/password"
+
+  get "settings/iquit"
+
+  resources :tags, :jokes, :settings
+
   devise_for :users
 
   get "home/index"

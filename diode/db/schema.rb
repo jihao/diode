@@ -10,7 +10,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929134124) do
+ActiveRecord::Schema.define(:version => 20111009011431) do
+
+  create_table "jokes", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.float    "score"
+    t.boolean  "visible"
+    t.boolean  "disable_comments"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jokes", ["user_id"], :name => "index_jokes_on_user_id"
+
+  create_table "jokes_tags", :id => false, :force => true do |t|
+    t.integer "joke_id"
+    t.integer "tag_id"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

@@ -1,0 +1,32 @@
+<div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <%= link_to '段子网',root_path, :class=>'brand' %>
+          <ul class="nav">
+            <li class="active"><%= link_to '首页',root_path%></li>
+            <li><a href="#about">最新</a></li>
+            <li><a href="#contact">24小时最热</a></li>
+            <li><a href="#contact">本周最热</a></li>
+            <li><a href="#contact">本月最热</a></li>
+            <li><a href="#contact">本年最热</a></li>
+          </ul>
+          <p class="pull-right">
+            <% if user_signed_in? -%> <!-- Provided by devise -->
+                <%= link_to image_tag("msg.png",:size=>"24x24",:class=>"header_msg"), 'http://placehold.it/24x24', :title=> "连接新浪" %>
+                <%= current_user.email %> |
+                <%= link_to '我的主页', edit_user_registration_path %> |
+                <%= link_to '账号设置', settings_index_path %> |
+                <%= link_to '退出登陆', destroy_user_session_path, :method => :delete %> | 
+                <%= link_to '讲一个', new_joke_path %> 
+                <!-- 
+                <%= link_to image_tag("msg.png"), '/auth/tsina', :title=> "连接新浪" %>
+                -->
+            <% end %>
+            <% unless user_signed_in? -%>
+                <%= link_to '注册', new_user_registration_path %> |
+                <%= link_to '登录', new_user_session_path %>
+            <% end %>
+            </p>
+        </div>
+      </div>
+   </div>

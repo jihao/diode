@@ -1,0 +1,39 @@
+<%= form_for(@joke) do |f| %>
+<fieldset>
+
+  <% if @joke.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@joke.errors.count, "error") %> prohibited this joke from being saved:</h2>
+
+      <ul>
+      <% @joke.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="clearfix">
+	  <%= f.label :title %>
+	  <div class="input">
+		<%= f.text_field :title,:class=>'xxlarge',:placeholder=>'可留空' %>
+		<span class="help-block">
+		</span>
+	  </div>
+	</div>
+	<div class="clearfix">
+	  <%= f.label :content %>
+	  <div class="input">
+		<%= f.text_area :content,:rows=>10,:class=>'xxlarge' %>
+		<span class="help-block">
+			请文明发言,珍惜个人ID
+		</span>
+	  </div>
+	</div>
+	<div class="clearfix">
+	    <div class="input"><%= f.check_box :disable_comments %> <span>禁止评论</span> </div>
+	</div>
+  <div class="actions">
+    <%= f.submit "发布",:class=>"btn primary"%>
+  </div>
+<% end %>

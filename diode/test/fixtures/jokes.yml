@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  score: 1.5
+  visible: false
+  allow_comments: false
+  user: 
+
+two:
+  title: MyString
+  content: MyText
+  score: 1.5
+  visible: false
+  allow_comments: false
+  user: 
