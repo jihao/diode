@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     if @user != current_user 
       redirect_to :action => "show_user_jokes", :user_id => params[:user_id]
     else
+      @jokes = @user.jokes.order(:created_at).page(params[:page])
       render(:layout=>"user_home")
     end
   end

@@ -1,2 +1,6 @@
-<h1>Home#show</h1>
-<p>Find me in app/views/home/show.html.erb</p>
+
+<% @jokes.each do |joke| %>
+<%=render(:partial=>'/jokes/joke',:object=>joke) %>
+<% end %>
+<div style="position:relative;clear:both;"></div>
+<%= paginate @jokes,:window => 2,:outer_window => 2 %>

@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="span1" style="text-align:center">
+		<a href="#">
+		      <img class="thumbnail" src="http://placehold.it/48x48" alt="">
+		</a>
+		<a href="#">昵称</a>
+	</div>
+	<div class="span10">
+		<h5><%= link_to h(joke.title), joke %></h5>
+		<div class="joke_content">
+			<%=h joke.content%>
+		</div>
+		<div class="joke_tagbar">
+			<ul class="unstyled" style="float:left;">
+				<li class="first"><span class="label notice">tag1</span></li>
+				<li><span class="label notice">tag2</span></li>
+				<li><span class="label notice">tag3</span></li>
+			</ul>
+		    <ul class="unstyled" style="float:right;">
+				<li><span class="lable"　style="float:right;"><%=time_ago_in_words joke.created_at %></span></li>
+			</ul>
+			
+			<div style="clear:both;"></div>
+		</div>
+		<div class="joke_menubar">
+			<ul class="unstyled" style="float:left;">
+				<li class="first"><%= link_to image_tag("btn/hands_up.png",:size=>"24x24",:class=>""), joke %></li>
+				<li><%= link_to image_tag("btn/hands_down.png",:size=>"24x24",:class=>""), joke %></li>
+				<li></li>
+			</ul>
+			<ul class="unstyled" style="float:right;">
+				<li><%= link_to image_tag("btn/view.png",:size=>"24x24",:class=>""), joke %></li>
+				<li><%= link_to image_tag("btn/edit.png",:size=>"24x24",:class=>""), edit_joke_path(joke) %></li>
+				<li><%= link_to image_tag("btn/delete.png",:size=>"24x24",:class=>""), joke, :confirm => 'Are you sure?', :method => :delete %></li>
+				<li><%= link_to image_tag("btn/fav.png",:size=>"24x24",:class=>""), joke %></li>
+				<li><%= link_to image_tag("btn/comment.png",:size=>"24x24",:class=>""), joke %></li>
+			</ul>
+			<div style="clear:both;"></div>
+			
+		</div>
+	</div>
+</div>
+<div class="row">
+	<hr>
+</div>
