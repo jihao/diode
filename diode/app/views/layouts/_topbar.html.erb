@@ -14,7 +14,7 @@
             <% if user_signed_in? -%> <!-- Provided by devise -->
                 <%= link_to image_tag("msg.png",:size=>"24x24",:class=>"header_msg"), 'http://placehold.it/24x24', :title=> "连接新浪" %>
                 <%= current_user.email %> |
-                <%= link_to '我的主页', edit_user_registration_path %> |
+                <%= link_to '我的主页', user_path(current_user) %> |
                 <%= link_to '账号设置', settings_index_path %> |
                 <%= link_to '退出登陆', destroy_user_session_path, :method => :delete %> | 
                 <%= link_to '讲一个', new_joke_path %> 

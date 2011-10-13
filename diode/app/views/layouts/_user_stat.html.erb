@@ -1,0 +1,15 @@
+<% @user ||= current_user %>
+<div style="text-align:center;"><!--个人信息-->
+	<dl>
+		<dt><a href="" title="haojii"><img src="http://placehold.it/128x128"></a></dt>
+		<dd>
+		<a href="#"><%= @user.email %></a>
+		<p>签名档</p>
+		</dd>
+	</dl>
+	<ul class="unstyled">	
+		<li><span>段子:</span><strong><%= @user.jokes.count %></strong></li>
+		<li><a href="<%= following_user_path(@user) %>"><span>关注:</span><strong id="following"><%= @user.following.count %></strong></a></li>
+		<li><a href="<%= followers_user_path(@user) %>"><span>粉丝:</span><strong id="followers"><%= @user.followers.count %></strong></a></li>
+	</ul>
+<!--/个人信息--></div>

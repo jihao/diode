@@ -16,6 +16,14 @@ Diode::Application.routes.draw do
   #　查看该用户发布的所有笑话
   match 'home/:user_id/jokes' => 'home#show_user_jokes', :as => :show_user_jokes
   
+  resources :users do
+      member do
+        get :following, :followers
+      end
+  end
+  
+  resources :relationships, :only => [:create, :destroy]
+    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,10 @@
+
+<% if current_user != @user %>
+  <div style="text-align:center;" id="follow_form"><!--follow-->
+  <% if current_user.following?(@user) %>
+    <%= render :partial => 'layouts/unfollow' %>
+  <% else %>
+    <%= render :partial => 'layouts/follow' %>
+  <% end %>
+  <!--/follow--></div>
+<% end %>

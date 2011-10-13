@@ -1,0 +1,3 @@
+$("#follow_form").html("<%= escape_javascript(render('layouts/follow')) %>")
+$("#followers").text('<%= "#{@user.followers.count}" %>')
+//TODO show flash message

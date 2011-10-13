@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diode</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= render :partial => "layouts/fav_touch" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render :partial => "layouts/topbar" %>
+
+<div class="container-fluid">
+     <div class="sidebar">
+       <div class="well">
+		<%= render :partial => "layouts/user_stat" %>
+		<%= render :partial => "layouts/follow_form" if user_signed_in? %>
+       </div>
+     </div>
+     <div class="content">
+       <%= yield%>
+       <%= render :partial => "layouts/footer" %>
+     </div>
+   </div>
+</body>
+</html>

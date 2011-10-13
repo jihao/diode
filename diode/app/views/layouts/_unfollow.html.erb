@@ -1,0 +1,4 @@
+<%= form_for current_user.relationships.find_by_followed_id(@user),
+             :remote=>true, :html => { :method => :delete } do |f| %>
+  <button class="btn success disabled">已关注</button> | <%= f.submit "取消关注",:class=>"btn danger" %>
+<% end %>

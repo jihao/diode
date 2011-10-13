@@ -6,12 +6,12 @@ class HomeController < ApplicationController
   
   def show
     @user = User.find(params[:user_id])
-    if @user != current_user 
-      redirect_to :action => "show_user_jokes", :user_id => params[:user_id]
-    else
-      @jokes = @user.jokes.order(:created_at).page(params[:page])
-      render(:layout=>"user_home")
-    end
+    # @jokes = @user.jokes.order(:created_at).page(params[:page])
+    @jokes = @user.feed_jokes.page(params[:page])
+    # Note: 
+    #  user_object.feed_jokes 
+    #  Joke.from_users_followed_by(user)
+    render(:layout=>"user_home")
   end
   
   def show_user_jokes

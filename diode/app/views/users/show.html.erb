@@ -1,0 +1,5 @@
+<% @jokes.each do |joke| %>
+<%=render(:partial=>'/users/joke',:object=>joke) %>
+<% end %>
+<div style="position:relative;clear:both;"></div>
+<%= paginate @jokes,:window => 2,:outer_window => 2 %>

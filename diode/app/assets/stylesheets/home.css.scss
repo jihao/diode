@@ -20,16 +20,3 @@ div.joke_menubar {
     float: left;
 	position: absolute;
 }
-div.rowlike {
-	
-	  margin-left: -20px;	
-}
-div.rowlike:before, div.rowlike:after {
-  display: table;
-  content: "";
-
-  *display: inline;
-}
-div.rowlike:after {
-  clear: both;
-}
