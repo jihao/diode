@@ -5,6 +5,7 @@ namespace :db do
     make_users
     make_jokes
     make_relationships
+    make_comments
   end
 end
 
@@ -29,6 +30,17 @@ def make_jokes
       content = Faker::Lorem.sentence(5)
       title = Faker::Name::name
       user.jokes.create!(:title=>title,:content => content)
+    end
+  end
+end
+
+def make_comments
+  Joke.all(:limit=>50).each do |joke|
+    10.times do |n|
+      content = Faker::Lorem.sentence(5)
+      comment = joke.comments.create!(:content=>content)
+      comment.user = User.find(n+1)
+      comment.save!
     end
   end
 end

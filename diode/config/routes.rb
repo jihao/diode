@@ -5,8 +5,12 @@ Diode::Application.routes.draw do
 
   get "settings/iquit"
 
-  resources :tags, :jokes, :settings
+  resources :tags, :settings
 
+  resources :jokes do
+    resources :comments
+  end
+  
   devise_for :users
 
   get "home/index"

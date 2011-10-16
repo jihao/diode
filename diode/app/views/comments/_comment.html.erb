@@ -1,0 +1,15 @@
+<%# 
+  - available local variables
+    comment:       the comment object
+-%>
+<div class="comment">
+	<div class="user_info small">
+		<%= comment.user.object_id %>
+	</div>
+	<div class="content">
+		<p><%= comment.content %></p>
+    </div>
+	<div class="">
+    <p><%= link_to 'Destroy', joke_comment_path(comment.joke,comment), :confirm => 'Are you sure?', :method => :delete %></p>
+	</div>
+</div>

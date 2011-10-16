@@ -1,0 +1,13 @@
+if($("#comments").css('display')=='none')
+{
+$("#comments").html("<%=raw escape_javascript(render(:partial=>'comment',:collection=>@comments)) %>");
+//$("#comments_count span").text($("#comments .comment").length + "条评论");
+
+//if($("#comments").css('display')=='none')
+//{
+//	$("#comments").css('display','block');
+//}
+//else
+//{
+//	$("#comments").css('display','none');
+//}

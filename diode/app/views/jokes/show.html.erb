@@ -1,4 +1,28 @@
 <p id="notice"><%= notice %></p>
+<%=render(:partial=>'joke',:object=>@joke) %>
+<div class="row comments" id="comments">
+<%= render(:partial=>'comments/comment',:collection=>@joke.comments) %>
+</div>
+
+<div class="row form">
+	<div class="form">
+	<h2>Add a comment:</h2>
+	<%= form_for([@joke, @joke.comments.build], :remote=>true) do |f| %>
+	  <div class="clearfix">
+	  <%= f.label :content %>
+	    <div class="input">
+		  <%= f.text_area :content,:rows=>10,:class=>'xxlarge' %>
+		  <span class="help-block">
+			请文明发言,珍惜个人ID
+		  </span>
+	    </div>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit "Submit",:class=>"btn primary" %>
+	  </div>
+	<% end %>
+	</div>
+</div>
 
 
 <%= link_to 'Edit', edit_joke_path(@joke) %> |

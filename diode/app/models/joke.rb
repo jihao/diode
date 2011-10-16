@@ -1,5 +1,7 @@
 class Joke < ActiveRecord::Base
   belongs_to :user
+  has_many :comments
+  
   default_scope :order => 'created_at DESC'
   
     # Return microposts from the users being followed by the given user.
