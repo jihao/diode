@@ -43,9 +43,14 @@ class JokesController < ApplicationController
   # POST /jokes
   # POST /jokes.json
   def create
-    @joke = Joke.new(params[:joke])
+    @joke = Joke.new(params[:joke].except(:tags))
+    str_tags = params[:joke][:tags].split(',')
+    @tags = str_tags.map {|tag_name|
+      Tag.find_or_create_by_name(tag_name)
+    }
     @joke.user = current_user
-
+    @joke.tags = @tags
+    
     respond_to do |format|
       if @joke.save
         format.html { redirect_to @joke, :notice => 'Joke was successfully created.' }
@@ -63,7 +68,13 @@ class JokesController < ApplicationController
     @joke = Joke.find(params[:id])
 
     respond_to do |format|
-      if @joke.update_attributes(params[:joke])
+      str_tags = params[:joke][:tags].split(',')
+      @tags = str_tags.map {|tag_name|
+        Tag.find_or_create_by_name(tag_name)
+      }
+      @joke.tags = @tags
+      
+      if @joke.update_attributes(params[:joke].except(:tags))
         format.html { redirect_to @joke, :notice => 'Joke was successfully updated.' }
         format.json { head :ok }
       else
