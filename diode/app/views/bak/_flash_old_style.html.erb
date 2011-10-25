@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+<div class="alert-message block-message info" style="
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 10000;
+overflow: visible;
+top:40px;padding-top:0px;padding-bottom:0px;">
+  <a class="close" href="#">×</a>
+  <p style="text-align:center;"><strong></strong>some text goes here <%=flash[:notice]%> </p>
+</div>
+<% end %>

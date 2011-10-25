@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  layout "user_home",:except=>[:rss,:atom,:json]
+  layout "users",:except=>[:rss,:atom,:json]
   
   respond_to :html,:xml,:json,:js
   

@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     # Note: 
     #  user_object.feed_jokes 
     #  Joke.from_users_followed_by(user)
-    render(:layout=>"user_home")
+    render(:layout=>"users")
   end
   
   def show_user_jokes

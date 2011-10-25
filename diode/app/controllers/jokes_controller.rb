@@ -1,12 +1,12 @@
 class JokesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  layout "user_home",:except=>[:rss,:atom,:json]
+  layout "users",:except=>[:rss,:atom,:json]
   
   # GET /jokes
   # GET /jokes.json
   def index
     @jokes = Joke.all
-
+    flash[:notice] = '测试消息'
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @jokes }
@@ -91,7 +91,7 @@ class JokesController < ApplicationController
     @joke.destroy
 
     respond_to do |format|
-      format.html { redirect_to jokes_url }
+      format.html { redirect_to jokes_url,:notice => '成功删除该段子' }
       format.json { head :ok }
     end
   end
