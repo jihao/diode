@@ -5,3 +5,7 @@
  *= require_self
  *= require_tree . 
 */
+body {
+	background-image: url(/assets/body_bg.jpg);
+	background-repeat: repeat;
+}
