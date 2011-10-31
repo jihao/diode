@@ -4,6 +4,9 @@
   <title>Diode</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
+  <%= stylesheet_link_tag params[:controller] %>
+
   <%= render :partial => "layouts/fav_touch" %>
   <%= csrf_meta_tags %>
 </head>

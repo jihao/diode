@@ -2,8 +2,11 @@
 <html>
 <head>
   <title>Diode</title>
-  <%= stylesheet_link_tag    "application","bootstrap" %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
+  <%= stylesheet_link_tag params[:controller] %>
+
   <style type="text/css">
     body {
       padding-top: 60px;
