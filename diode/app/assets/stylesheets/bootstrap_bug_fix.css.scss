@@ -1,0 +1,9 @@
+// Waiting BUG fix: https://github.com/twitter/bootstrap/issues/295 
+// In fluid second row is always lower than sidebar
+.container-fluid {padding-left:260px; padding-right:20px;}
+.container-fluid > .content {float:left; width:100%; margin:0;}
+.container-fluid > .sidebar {margin-left:-240px;}
+.topbar-inner > .container-fluid {padding-left: 20px;padding-right: 20px;}
+
+// currently for all(4) layout pages
+body {padding-top: 60px;}

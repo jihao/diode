@@ -7,52 +7,12 @@
   <%= javascript_include_tag params[:controller] %>
   <%= stylesheet_link_tag params[:controller] %>
 
-  <style type="text/css">
-    body {
-      padding-top: 60px;
-    }
-    p.pull-right {
-    color:#BFBFBF;
-    }
-    img.header_msg{
-        vertical-align:middle;
-    }
-    /* Styles you shouldn't keep as they are for displaying this base example only */
-    .content .span10, .content .span4 {
-        min-height: 400px;
-      }
-    /* Give a quick and non-cross-browser friendly divider */
-    .content .span4 {
-       margin-left: 0;
-       padding-left: 19px;
-       border-right: 1px solid #eee;
-     }
-	.round-border,.ok {
-		width:100%;
-		height:100%;
-	  border: 1px solid #ddd;
-	  -webkit-border-radius: 6px;
-	     -moz-border-radius: 6px;
-	          border-radius: 6px;
-	  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.075);
-	     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.075);
-	          box-shadow: 0 1px 2px rgba(0,0,0,.075);
-	}
-	.fix-margin {
-		margin-left: 0px;
-	}
-	.content .span10 .ok {
-		min-height: 400px;
-		padding: 19px;
-	}
-  </style>
-
   <%= render :partial => "layouts/fav_touch" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= render :partial => "layouts/topbar" %>
-	
+<!-- layout file used for user settings etc-->
 <div class="container">
 
       <div class="content">

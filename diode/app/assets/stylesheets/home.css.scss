@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 div.joke_menubar, div.joke_tagbar{
 	ul.unstyled {
 		margin:6px 0px 2px 0px;
@@ -16,7 +17,4 @@ div.joke_menubar, div.joke_tagbar{
 div.joke_menubar {
 	background-color:#FEFBF3;
 }
-.container-fluid > .content {
-    float: left;
-	position: absolute;
-}
+

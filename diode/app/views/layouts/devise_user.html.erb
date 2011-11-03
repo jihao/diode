@@ -2,37 +2,15 @@
 <html>
 <head>
   <title>Diode</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application","devise_user" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag params[:controller] %>
-  <%= stylesheet_link_tag params[:controller] %>
-  <style type="text/css">
-    body {
-      padding-top: 60px;
-    }
-    p.pull-right {
-    color:#BFBFBF;
-    }
-    img.header_msg{
-        vertical-align:middle;
-    }
-    /* Styles you shouldn't keep as they are for displaying this base example only */
-    .content .span10, .content .span4 {
-        min-height: 400px;
-      }
-    /* Give a quick and non-cross-browser friendly divider */
-    .content .span4 {
-       margin-left: 0;
-       padding-left: 19px;
-       border-right: 1px solid #eee;
-     }
-  </style>
+  
   <%= render :partial => "layouts/fav_touch" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= render :partial => "layouts/topbar" %>
-	
+<!-- layout file used for devise user register & login etc-->
 <div class="container">
 
       <div class="content">
@@ -51,7 +29,6 @@
       </div>
 
       <%= render :partial => "layouts/footer" %>
-
     </div>
 </body>
 </html>

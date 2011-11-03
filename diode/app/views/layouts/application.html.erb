@@ -6,20 +6,6 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag params[:controller] %>
   <%= stylesheet_link_tag params[:controller] %>
-  <style type="text/css">
-    body {
-      padding-top: 60px;
-    }
-    .content {
-		min-width:940px;
-    }
-    p.pull-right {
-    color:#BFBFBF;
-    }
-    img.header_msg{
-        vertical-align:middle;
-    }
-  </style>
 
   <%= render :partial => "layouts/fav_touch" %>
   <%= csrf_meta_tags %>
@@ -27,7 +13,7 @@
 <body>
    
 <%= render :partial => "layouts/topbar" %>
-
+<!-- layout file used for home page-->
 <div class="container-fluid">
      <%= render :partial => "layouts/sidebar" %>
 

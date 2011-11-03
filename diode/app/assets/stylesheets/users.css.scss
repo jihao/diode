@@ -1,6 +1,7 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 div.joke_menubar, div.joke_tagbar{
 	ul.unstyled {
 		margin:6px 0px 2px 0px;
@@ -16,23 +17,7 @@ div.joke_menubar, div.joke_tagbar{
 div.joke_menubar {
 	background-color:#FEFBF3;
 }
-.container-fluid > .content {
-    float: left;
-	position: absolute;
-}
 
-body {
-	padding-top: 60px;
-}
-.content {
-	min-width:940px;
-}
-p.pull-right {
-	color:#BFBFBF;
-}
-img.header_msg{
-	vertical-align:middle;
-}
 .round-border,.ok {
 	width:100%;
 	height:100%;
