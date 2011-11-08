@@ -11,3 +11,4 @@ body {background-image: url(/assets/body_bg.jpg);background-repeat: repeat;}
 div.content {min-width:940px;}
 p.pull-right {color:#BFBFBF;}
 img.header_msg {vertical-align:middle;}
+footer {text-align:center;}
